@@ -103,7 +103,7 @@ export class AppComponent {
     {
       id: 13,
       img: '../assets/images/5_of_clubs.png',
-      name: '2_of_clubs',
+      name: '5_of_clubs',
       back: '../assets/images/back.png',
       open: false,
     },
@@ -229,7 +229,7 @@ export class AppComponent {
     {
       id: 31,
       img: '../assets/images/5_of_clubs.png',
-      name: '2_of_clubs',
+      name: '5_of_clubs',
       back: '../assets/images/back.png',
       open: false,
     },

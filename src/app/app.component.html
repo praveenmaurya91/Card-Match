@@ -1,0 +1,47 @@
+<div class="container py-2">
+  <div class="h1 text-center">Card Match</div>
+  <hr />
+  <div *ngIf="!gameStarted">
+    <div class="text-center mt-5">
+      <button (click)="startGame()" class="btn btn-success">Start Game</button>
+    </div>
+  </div>
+  <div *ngIf="gameStarted && !gameFinished">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-2" *ngFor="let card of cards; index as i">
+            <div (click)="openCard(card, i)">
+              <img
+                class="my-card my-2"
+                *ngIf="!card.open"
+                [src]="card.back"
+                [alt]="card.id"
+              />
+              <img
+                class="my-card my-2 shadow"
+                *ngIf="card.open"
+                [src]="card.img"
+                [alt]="card.id"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="h1">
+          {{ countdown }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="gameFinished">
+    <div class="h1 text-center">Congratulation!</div>
+    <div class="h4 text-center py-4">
+      You finished the game in {{ countdown }}
+    </div>
+    <div class="text-center mt-5">
+      <button (click)="startGame()" class="btn btn-success">Play Again</button>
+    </div>
+  </div>
+</div>
